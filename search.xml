@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Stream]]></title>
+    <url>%2F2019%2F03%2F21%2FStream%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F03%2F21%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[异常处理]]></title>
+    <url>%2F2018%2F12%2F28%2F%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>异常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql知识汇总]]></title>
+    <url>%2F2018%2F12%2F10%2Fmysql%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[为什么 group by 和 order by 会使查询变慢?因为这两个操作需要一个临时表来处理查询的结果数据 谈谈你对索引的理解？索引是若干数据行的关键字的列表，查询数据时，通过索引中的关键字可以快速定位到要访问的记录所在的数据块，从而大大减少读取IO的次数，因此可以显著提升性能。 是不是索引建立得越多越好？合理的索引可以提高查询速度，但是索引在增、删、改的时候需要去维护，所以过多的索引会导致其他操作变慢，从而得不偿失。原则上只在查询使用的字段上增加索引。创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。 为什么 UNION ALL 比 UNION 快？因为在使用UNION的时候，需要删除重复的记录，所以在知道UNION查询的结果没有重复的情况下，一定要使用UNION ALL。 数据库事务的四个特性及含义数据库事务正确执行的4个要素(ACID)： 原子性(Atomicity)：整个事物中的所有操作，要么全部完成，要的全部失败，不可能停滞在某一环节。如果执行出错则全部回滚(rollback); 一致性(Correspondence)：一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。 隔离性(Isolation)：事务的隔离性是多个用户并发访问数据库时，数据库为每一个用户开启的事务，不能被其他事务的操作数据所干扰，多个并发事务之间要相互隔离。 持久性(Durability)：持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，接下来即使数据库发生故障也不应该对其有任何影响。事务隔离级别事务的并发问题 脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据 不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。 幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表MySQL事务隔离级别事务隔离级别 脏读 不可重复读 幻读读未提交（read-uncommitted） 是 是 是不可重复读（read-committed） 否 是 是可重复读（repeatable-read） 否 否 是串行化（serializable） 否 否 否mysql默认的事务隔离级别为repeatable-read 参考链接事务隔离级别参考链接]]></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GIT]]></title>
+    <url>%2F2018%2F12%2F10%2FGIT%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[简单排序算法]]></title>
+    <url>%2F2018%2F12%2F07%2F%E7%AE%80%E5%8D%95%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[名词解释 稳定：如果a原本在b的前面，而a=b，排序后a仍然在b的前面； 不稳定：如果a原本在b的前面，而a=b，排序后a可能在b的后面； 内排序：所有排序操作都在内存中完成； 外排序：由于数据太大，因此把数据存储在硬盘中，而排序通过硬和盒内存之间传输数据才能完成； 时间复杂度：一个算法执行完成所耗费的时间； 空间复杂度：一个算法执行完成所耗费的内存大小。 常见算法总结 冒泡排序冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 动图效果 实现代码123456789101112131415161718192021222324/** * 冒泡排序 * * @param array * @return */public static int[] bubbleSort(int[] array) &#123; if (array == null) &#123; return null; &#125; if (array.length == 0) &#123; return array; &#125; for (int i = 0; i &lt; array.length; i++) &#123; for (int j = 0; j &lt; array.length - 1 - i; j++) &#123; if (array[j + 1] &lt; array[j]) &#123; int temp = array[j + 1]; array[j + 1] = array[j]; array[j] = temp; &#125; &#125; &#125; return array;&#125; 优化今天在一篇文章中看见这个问题，冒泡算法如何优化，即以上代码是否存在优化空间？我们可以思考一下这个问题：如果排序前数组为[8,1,2,3,4,5,6,7],经过一次排序后为[1,2,3,4,5,6,7,8],即已经完成排序，但是我们的代码仍然会继续执行，做了很多无用功，所以我们可以加入一个判断条件：如果一次排序中没有任何一个数据位置发生交换，则数据已经是排序后的结果，无需再进行下去，所以可以按照如下修改:1234567891011121314151617181920212223242526272829/** * 冒泡排序 * * @param array * @return */public static int[] bubbleSort(int[] array) &#123; if (array == null) &#123; return null; &#125; if (array.length == 0) &#123; return array; &#125; for (int i = 0; i &lt; array.length; i++) &#123; boolean flag = false; for (int j = 0; j &lt; array.length - 1 - i; j++) &#123; if (array[j + 1] &lt; array[j]) &#123; int temp = array[j + 1]; array[j + 1] = array[j]; array[j] = temp; flag = true; &#125; &#125; if (!flag) &#123; return array; &#125; &#125; return array;&#125; 选择排序表现最稳定的排序算法之一，因为无论什么数据进去都是O(n2)的时间复杂度，所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。理论上讲，选择排序可能也是平时排序一般人想到的最多的排序方法了吧。选择排序(Selection-sort)是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 动图效果 实现代码1234567891011121314151617181920212223242526/** * 选择排序 * * @param array * @return */public static int[] selectSort(int[] array) &#123; if (array == null) &#123; return null; &#125; if (array.length == 0) &#123; return array; &#125; for (int i = 0; i &lt; array.length; i++) &#123; int mixIndex = i; for (int j = i; j &lt; array.length; j++) &#123; if (array[j] &lt; array[mixIndex]) &#123; mixIndex = j; &#125; int temp = array[mixIndex]; array[mixIndex] = array[i]; array[i] = temp; &#125; &#125; return array;&#125; 插入排序插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。 动图效果 实现代码1234567891011121314151617181920212223242526/** * 插入排序 * * @param array * @return */public static int[] insertSort(int[] array) &#123; if (array == null) &#123; return null; &#125; if (array.length == 0) &#123; return array; &#125; //第一个不用动 从第二个开始比较 for (int i = 1; i &lt; array.length; i++) &#123; int current = array[i]; int index = i; //依此比较相邻的两个值 while (index &gt;= 0 &amp;&amp; current &lt; array[index - 1]) &#123; index--; array[index] = array[index - 1]; &#125; array[index] = current; &#125; return array;&#125; 其他排序见参考链接参考链接及详情]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JDK1.8HashMap知识梳理]]></title>
+    <url>%2F2018%2F12%2F04%2FHashMap%2F</url>
+    <content type="text"><![CDATA[数据结构HashMap每一条数据由Node&lt;K,V&gt;存储，数据维护在底层为Node数组，当Hash冲突时，产生单向链表，JDK1.8之后如果链表节点大于或等于8，则将链表改为红黑树。 所以HashMap底层数据结构为 数组+链表+红黑数。hash算法为了使数据趋于均衡的存储，HashMap使用了自己hash算法： 1234static final int hash(Object key) &#123; int h; return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16); &#125; 我们简单看一下，调用了Object的底层hashCode()方法之后，得到一个32位的code，再使用右位移运算与原来的进行异或运算来保证每一位参与运算，降低hash碰撞。 &gt;&gt;&gt;与&gt;&gt; :位移运算符，&gt;&gt;&gt;无符号位移，意思是无论是负数还是正数，前面加0， 比如 11111111111111111111111111111111 &gt;&gt;&gt; 16 = 00000000000000001111111111111111 &gt;&gt;有符号位移，意思是如果是负数前面加1，是正数前面加0，保持原来数据的符号 异或：区别于 &amp;（与） |（或），相同则为0，不同则为1；如 1^1=0 1^0=1 0^0=1 如果使用与则数据趋向于0，如果使用或则数据趋向于1，所以使用异或将每一位数据发挥作用，减小hash碰撞的可能性。 hash碰撞：不同的值得到相同的结果，存放在同一个节点中。 保证数组大小HashMap提供了多个构造方法，我们可以自己给定初始化数组的大小，但是通过源码我们发现，底层通过一个方法处理了我们传的数组大小参数，如下： 123456789static final int tableSizeFor(int cap) &#123; int n = cap - 1; n |= n &gt;&gt;&gt; 1; n |= n &gt;&gt;&gt; 2; n |= n &gt;&gt;&gt; 4; n |= n &gt;&gt;&gt; 8; n |= n &gt;&gt;&gt; 16; return (n &lt; 0) ? 1 : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1; &#125; 这个方法是返回一个大于等于当前参数的2的倍数。扩容当数组达到一定数量之后，就需要扩容，当然我们不可能在数组满了才去扩容，这样可能已经产生了非常多的hash碰撞，所以这个扩容的临界点也是一个问题， HashMap采用的是0.75这个比例，即数组被占用的75%则扩容，这个是基于时间和空间的考虑得出的结论，一个比较合适的值。 而每次扩容的大小则采用的是&gt;&gt;1,即*2。这里为什么使用2倍扩容方案还有一个原因： 插入元素的hash值是一个32位的int值，而实际当前元素插入table的索引的值为 ：(n - 1) &amp; hash n为数组table的大小 这个操作其实就是取余（%），使用位运算其实是为了效率。但是前提是n必须是2的倍数。]]></content>
+  </entry>
+</search>
