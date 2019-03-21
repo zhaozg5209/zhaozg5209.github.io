@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="git,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="学习学习">
+<meta name="description" content="Git 使用快速入门获取Git 在现有的目录中初始化仓库：进入项目目录运行 init``` 命令,该命令将创建一个名为 .git 的子目录。1234567891011121314151617181920* 从一个服务器克隆一个现有的Git仓库：```git clone [url] directoryname```（directoryname为本地仓库即文件夹的名称，可选）。## 记录每次更新到仓库">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT">
 <meta property="og:url" content="http://yoursite.com/2018/12/10/GIT/index.html">
 <meta property="og:site_name" content="炉石港湾">
-<meta property="og:description" content="学习学习">
+<meta property="og:description" content="Git 使用快速入门获取Git 在现有的目录中初始化仓库：进入项目目录运行 init``` 命令,该命令将创建一个名为 .git 的子目录。1234567891011121314151617181920* 从一个服务器克隆一个现有的Git仓库：```git clone [url] directoryname```（directoryname为本地仓库即文件夹的名称，可选）。## 记录每次更新到仓库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T03:19:05.086Z">
+<meta property="og:updated_time" content="2019-03-21T06:40:21.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT">
-<meta name="twitter:description" content="学习学习">
+<meta name="twitter:description" content="Git 使用快速入门获取Git 在现有的目录中初始化仓库：进入项目目录运行 init``` 命令,该命令将创建一个名为 .git 的子目录。1234567891011121314151617181920* 从一个服务器克隆一个现有的Git仓库：```git clone [url] directoryname```（directoryname为本地仓库即文件夹的名称，可选）。## 记录每次更新到仓库">
 
 
 
@@ -367,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  772
                 </span>
               
 
@@ -383,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -404,7 +405,14 @@
       
 
       
-        
+        <h3 id="Git-使用快速入门"><a href="#Git-使用快速入门" class="headerlink" title="Git 使用快速入门"></a>Git 使用快速入门</h3><h2 id="获取Git"><a href="#获取Git" class="headerlink" title="获取Git"></a>获取Git</h2><ul>
+<li>在现有的目录中初始化仓库：进入项目目录运行 <figure class="highlight plain"><figcaption><span>init``` 命令,该命令将创建一个名为 .git 的子目录。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">* 从一个服务器克隆一个现有的Git仓库：```git clone [url] directoryname```（directoryname为本地仓库即文件夹的名称，可选）。</span><br><span class="line">## 记录每次更新到仓库</span><br><span class="line">* 检测当前文件状态：```git status``` 。</span><br><span class="line">* 提出更改（把它们添加到暂存区）：```git add *```(所有文件)、```git add filename``` (针对特定文件)、```git add *.txt```（支持通配符，所有 .txt 文件）。</span><br><span class="line">* 忽略文件：.gitignore 文件(可在里面配置不需要提交的文件)。</span><br><span class="line">* 提交更新：```git commit -m &quot;代码提交日志&quot;```（每次准备提交前，先用 ```git status``` 看下，是不是都已暂存起来了， 然后再运行提交命令 git commit）。</span><br><span class="line">* 跳过使用暂存区域更新的方式 : ```git commit -a -m &quot;代码提交信息&quot;```。git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤。</span><br><span class="line">* 移除文件 ：```git rm filename``` （从暂存区域移除，然后提交。）</span><br><span class="line">* 对文件重命名 ：```git mv README.md README```(这个命令相当于```mv README.md README```、```git rm README.md```、```git add README``` 这三条命令的集合)。</span><br><span class="line">## 推送改动到远程仓库</span><br><span class="line">* 如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：</span><br><span class="line">  	```git init``` #git初始化</span><br><span class="line">	```git remote add origin https://github.com/用户名/你的GitHub用户名.github.io.git``` #添加仓库地址</span><br><span class="line">	```git checkout -b 分支名``` #新建分支并切换到新建的分支</span><br><span class="line">	```git add .``` #添加所有本地文件到git</span><br><span class="line">	```git commit -m &quot;这里填写你本次提交的备注，内容随意&quot;``` #git提交</span><br><span class="line">	```git push origin 分支名``` #文件推送到hexo分支</span><br><span class="line">## 查看提交历史</span><br><span class="line">在提交了若干更新，又或者克隆了某个项目之后，你也许想回顾下提交历史。 完成这个任务最简单而又有效的工具是 ```git log``` 命令。git log 会按提交时间列出所有的更新，最近的更新排在最上面。</span><br><span class="line">只看某个人的提交记录：```git log --author=zhaozg</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。<br>我们通常在开发新功能、修复一个紧急 bug 等等时候会选择创建分支。单分支开发好还是多分支开发好，还是要看具体场景来说。<br>创建一个名字叫做 test 的分支：<figure class="highlight plain"><figcaption><span>branch test```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">切换到test分支：```git checkout test</span><br></pre></td></tr></table></figure></p>
+<p>创建分支 test 并切换（上面两个的合并）：<figure class="highlight plain"><figcaption><span>checkout -b test```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">合并分支到当前分支上：```git merge test</span><br></pre></td></tr></table></figure></p>
+<p>将 test 分支推送到远端仓库（推送成功后其他人可见）：<code>git push origin test</code></p>
+<p><a href="https://mp.weixin.qq.com/s/ylyHOuEPX4tDvOc7-SxMmw" target="_blank" rel="noopener">参考链接:</a></p>
+
       
     </div>
     
@@ -418,6 +426,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
       
 
       
@@ -492,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -523,7 +546,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -584,6 +607,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-使用快速入门"><span class="nav-number">1.</span> <span class="nav-text">Git 使用快速入门</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#获取Git"><span class="nav-number"></span> <span class="nav-text">获取Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number"></span> <span class="nav-text">分支</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -611,7 +650,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.9k</span>
+    <span title="Site words total count">3.7k</span>
   
 </div>
 
