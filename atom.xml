@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-21T03:22:09.757Z</updated>
+  <updated>2019-03-21T07:09:14.723Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git常用命令</title>
+    <link href="http://yoursite.com/2019/03/21/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2019/03/21/Git常用命令/</id>
+    <published>2019-03-21T07:07:26.000Z</published>
+    <updated>2019-03-21T07:09:14.723Z</updated>
+    
+    <content type="html"><![CDATA[<p>分支操作：<br>git branch 创建分支<br>git branch -b 创建并切换到新建的分支上<br>git checkout 切换分支<br>git branch 查看分支列表<br>git branch -v 查看所有分支的最后一次操作<br>git branch -vv 查看当前分支<br>git brabch -b 分支名 origin/分支名 创建远程分支到本地<br>git branch –merged 查看别的分支和当前分支合并过的分支<br>git branch –no-merged 查看未与当前分支合并的分支<br>git branch -d 分支名 删除本地分支<br>git branch -D 分支名 强行删除分支<br>git branch origin :分支名 删除远处仓库分支<br>git merge 分支名 合并分支到当前分支上<br>暂存操作：<br>git stash 暂存当前修改<br>git stash apply 恢复最近的一次暂存<br>git stash pop 恢复暂存并删除暂存记录<br>git stash list 查看暂存列表<br>git stash drop 暂存名(例：stash@{0}) 移除某次暂存<br>git stash clear 清除暂存<br>回退操作：<br>git reset –hard HEAD^ 回退到上一个版本<br>git reset –hard ahdhs1(commit_id) 回退到某个版本<br>git checkout – file撤销修改的文件(如果文件加入到了暂存区，则回退到暂存区的，如果文件加入到了版本库，则还原至加入版本库之后的状态)<br>git reset HEAD file 撤回暂存区的文件修改到工作区<br>标签操作：<br>git tag 标签名 添加标签(默认对当前版本)<br>git tag 标签名 commit_id 对某一提交记录打标签<br>git tag -a 标签名 -m ‘描述’ 创建新标签并增加备注<br>git tag 列出所有标签列表<br>git show 标签名 查看标签信息<br>git tag -d 标签名 删除本地标签<br>git push origin 标签名 推送标签到远程仓库<br>git push origin –tags 推送所有标签到远程仓库<br>git push origin :refs/tags/标签名 从远程仓库中删除标签<br>常规操作：</p><p>git push origin test 推送本地分支到远程仓库<br>git rm -r –cached 文件/文件夹名字 取消文件被版本控制<br>git reflog 获取执行过的命令<br>git log –graph 查看分支合并图<br>git merge –no-ff -m ‘合并描述’ 分支名 不使用Fast forward方式合并，采用这种方式合并可以看到合并记录<br>git check-ignore -v 文件名 查看忽略规则<br>git add -f 文件名 强制将文件提交<br>git创建项目仓库：</p><p>git init 初始化<br>git remote add origin url 关联远程仓库<br>git pull<br>git fetch 获取远程仓库中所有的分支到本地<br>忽略已加入到版本库中的文件：</p><p>git update-index –assume-unchanged file 忽略单个文件<br>git rm -r –cached 文件/文件夹名字 (. 忽略全部文件)<br>取消忽略文件：</p><p>git update-index –no-assume-unchanged file</p><p>拉取、上传免密码：</p><p>git config –global credential.helper stor</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;分支操作：&lt;br&gt;git branch 创建分支&lt;br&gt;git branch -b 创建并切换到新建的分支上&lt;br&gt;git checkout 切换分支&lt;br&gt;git branch 查看分支列表&lt;br&gt;git branch -v 查看所有分支的最后一次操作&lt;br&gt;git br
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Stream</title>
@@ -92,7 +115,7 @@
     <link href="http://yoursite.com/2018/12/10/GIT/"/>
     <id>http://yoursite.com/2018/12/10/GIT/</id>
     <published>2018-12-10T07:24:14.000Z</published>
-    <updated>2019-03-21T06:59:58.433Z</updated>
+    <updated>2019-03-21T07:05:49.921Z</updated>
     
     <content type="html"><![CDATA[<h2 id="认识-Git"><a href="#认识-Git" class="headerlink" title="认识 Git"></a>认识 Git</h2><p>分布式版本控制系统（Distributed Version Control System，简称 DVCS）面世了。 Git 就是一个典型的分布式版本控制系统。</p><p>这类系统，客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。 这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。 因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。下图来源于Git官网。</p><h3 id="Git-的三种状态"><a href="#Git-的三种状态" class="headerlink" title="Git 的三种状态"></a>Git 的三种状态</h3><p>Git 有三种状态，你的文件可能处于其中之一：</p><p>•已提交（committed）：数据已经安全的保存在本地数据库中。<br>•已修改（modified）：已修改表示修改了文件，但还没保存到数据库中。<br>•已暂存（staged）：表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</p><p>由此引入 Git 项目的三个工作区域的概念：Git 仓库(.git directoty) 、工作目录(Working Directory) 以及 暂存区域(Staging Area) 。</p><p>基本的 Git 工作流程如下：<br>•在工作目录中修改文件。<br>•暂存文件，将文件的快照放入暂存区域。<br>•提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</p><h2 id="Git-使用快速入门"><a href="#Git-使用快速入门" class="headerlink" title="Git 使用快速入门"></a>Git 使用快速入门</h2><h3 id="获取Git"><a href="#获取Git" class="headerlink" title="获取Git"></a>获取Git</h3><ul><li>在现有的目录中初始化仓库：进入项目目录运行 <code>git init</code> 命令,该命令将创建一个名为 .git 的子目录。</li><li>从一个服务器克隆一个现有的Git仓库：<code>git clone [url] directoryname</code>（directoryname为本地仓库即文件夹的名称，可选）。</li></ul><h3 id="记录每次更新到仓库"><a href="#记录每次更新到仓库" class="headerlink" title="记录每次更新到仓库"></a>记录每次更新到仓库</h3><ul><li>检测当前文件状态：<code>git status</code> 。</li><li>提出更改（把它们添加到暂存区）：<code>git add *</code>(所有文件)、<code>git add filename</code> (针对特定文件)、<code>git add *.txt</code>（支持通配符，所有 .txt 文件）。</li><li>忽略文件：.gitignore 文件(可在里面配置不需要提交的文件)。</li><li>提交更新：<code>git commit -m &quot;代码提交日志&quot;</code>（每次准备提交前，先用 <code>git status</code> 看下，是不是都已暂存起来了， 然后再运行提交命令 git commit）。</li><li>跳过使用暂存区域更新的方式 : <code>git commit -a -m &quot;代码提交信息&quot;</code>。git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤。</li><li>移除文件 ：<code>git rm filename</code> （从暂存区域移除，然后提交。）</li><li>对文件重命名 ：<code>git mv README.md README</code>(这个命令相当于<code>mv README.md README</code>、<code>git rm README.md</code>、<code>git add README</code> 这三条命令的集合)。</li></ul><h3 id="推送改动到远程仓库"><a href="#推送改动到远程仓库" class="headerlink" title="推送改动到远程仓库"></a>推送改动到远程仓库</h3><ul><li>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<pre><code>`git init` #git初始化</code></pre>  <code>git remote add origin https://github.com/用户名/你的GitHub用户名.github.io.git</code> #添加仓库地址<br>  <code>git checkout -b 分支名</code> #新建分支并切换到新建的分支<br>  <code>git add .</code> #添加所有本地文件到git<br>  <code>git commit -m &quot;这里填写你本次提交的备注，内容随意&quot;</code> #git提交<br>  <code>git push origin 分支名</code> #文件推送到hexo分支<h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3>在提交了若干更新，又或者克隆了某个项目之后，你也许想回顾下提交历史。 完成这个任务最简单而又有效的工具是 <code>git log</code> 命令。git log 会按提交时间列出所有的更新，最近的更新排在最上面。<br>只看某个人的提交记录：<code>git log --author=zhaozg</code></li></ul><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。<br>我们通常在开发新功能、修复一个紧急 bug 等等时候会选择创建分支。单分支开发好还是多分支开发好，还是要看具体场景来说。<br>创建一个名字叫做 test 的分支：<code>git branch test</code><br>切换到test分支：<code>git checkout test</code><br>创建分支 test 并切换（上面两个的合并）：<code>git checkout -b test</code><br>合并分支到当前分支上：<code>git merge test</code><br>将 test 分支推送到远端仓库（推送成功后其他人可见）：<code>git push origin test</code></p><p><a href="https://mp.weixin.qq.com/s/ylyHOuEPX4tDvOc7-SxMmw" target="_blank" rel="noopener">参考链接:</a></p>]]></content>
     
